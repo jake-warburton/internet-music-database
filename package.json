@@ -3,5 +3,28 @@
     "dev": "next",
     "build": "next build",
     "start": "next start"
-  }
+  },
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-easy-state": "^6.1.1"
+  },
+  "name": "internet-music-database",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakewarburton6/internet-music-database.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jakewarburton6/internet-music-database/issues"
+  },
+  "homepage": "https://github.com/jakewarburton6/internet-music-database#readme",
+  "description": ""
 }
