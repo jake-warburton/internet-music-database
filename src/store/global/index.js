@@ -17,7 +17,6 @@ const Index = store({
       })
       .then(array => {
         if (array) {
-          console.log("full results: ", array);
           Index.searchResultsArray =
             array["results"]["artistmatches"]["artist"];
         }

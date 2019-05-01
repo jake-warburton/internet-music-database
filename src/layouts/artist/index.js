@@ -1,14 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
 
 import Header from "../../components/header/";
 
 import "./style.css";
 
-const Index = props => (
-  <div>
-    <Header />
-    {props.children}
-  </div>
-);
+class Index extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>
+        <Header />
+        {console.log(this.props)}
+        {this.props.children}
+      </div>
+    );
+  }
+}
 
 export default Index;

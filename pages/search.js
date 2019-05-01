@@ -1,96 +1,14 @@
-import React, { Component } from "react";
-import Link from "next/link";
-import { view } from "react-easy-state";
+import React from "react";
+import { withRouter } from "next/router";
 
-import GlobalStore from "../src/store/global.js";
+import Layout from "../src/layouts/search/";
 
-class Index extends Component {
-  constructor(props) {
-    super(props);
+import SearchResults from "../src/components/searchResults/";
 
-    this.state = {
-      searchQuery: "",
-      formattedSearchQuery: ""
-    };
-  }
+const Index = withRouter(props => (
+  <Layout>
+    <SearchResults />
+  </Layout>
+));
 
-  ComponentGetSearchResults() {
-    if (this.state.formattedSearchQuery) {
-      GlobalStore.GetSearchResults(this.state.formattedSearchQuery);
-    }
-  }
-
-  UpdateSearchQuery(event) {
-    let newSearchQuery;
-    let newFormattedSearchQuery;
-
-    if (event) {
-      newSearchQuery = event.target.value;
-      newFormattedSearchQuery = event.target.value;
-    } else {
-      let currentLocation = window.location.href;
-      let searchParameters = new URLSearchParams(currentLocation);
-      let queryArray = searchParameters.getAll("query");
-
-      if (queryArray[0]) {
-        newSearchQuery = queryArray[0];
-        newFormattedSearchQuery = newSearchQuery.replace(/ /gi, "+");
-      }
-    }
-
-    this.setState({
-      searchQuery: newSearchQuery,
-      formattedSearchQuery: newFormattedSearchQuery
-    });
-
-    GlobalStore.GetSearchResults(newFormattedSearchQuery);
-  }
-
-  componentDidMount() {
-    this.UpdateSearchQuery();
-  }
-
-  render() {
-    const { searchResultsArray } = GlobalStore;
-    let arrayKey = 0;
-    const formattedSearchResultsArray = searchResultsArray
-      .slice(0, 30)
-      .map(oneArtist => {
-        console.log("One artist: ", oneArtist);
-        return (
-          <div key={arrayKey++}>
-            <img src={oneArtist["image"][4]["#text"]} />
-            <Link
-              href={`/artist?name=${oneArtist["name"]
-                .replace(/ /gi, "+")
-                .toLowerCase()}`}
-              as={`/artist/${oneArtist["name"]
-                .replace(/ /gi, "+")
-                .toLowerCase()}`}
-            >
-              <a>{oneArtist["name"]}</a>
-            </Link>
-          </div>
-        );
-      });
-    return (
-      <>
-        <Link href={`/`}>
-          <a>Home</a>
-        </Link>
-        <div>Search query: {this.state.searchQuery}</div>
-        <div>
-          <input
-            value={this.state.searchQuery}
-            onChange={event => {
-              this.UpdateSearchQuery(event);
-            }}
-          />
-        </div>
-        <div>{formattedSearchResultsArray}</div>
-      </>
-    );
-  }
-}
-
-export default view(Index);
+export default Index;

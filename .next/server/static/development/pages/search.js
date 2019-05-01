@@ -866,6 +866,87 @@ module.exports = __webpack_require__(/*! ./dist/client/link */ "./node_modules/n
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _src_layouts_search___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../src/layouts/search/ */ "./src/layouts/search/index.js");
+/* harmony import */ var _src_components_searchResults___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../src/components/searchResults/ */ "./src/components/searchResults/index.js");
+var _jsxFileName = "C:\\wamp64\\www\\html\\internet-music-database\\pages\\search.js";
+
+
+
+
+var Index = Object(next_router__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(function (props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_layouts_search___WEBPACK_IMPORTED_MODULE_2__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_components_searchResults___WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }));
+});
+/* harmony default export */ __webpack_exports__["default"] = (Index);
+
+/***/ }),
+
+/***/ "./src/components/header/index.js":
+/*!****************************************!*\
+  !*** ./src/components/header/index.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ "./src/components/header/style.css");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "C:\\wamp64\\www\\html\\internet-music-database\\src\\components\\header\\index.js";
+
+
+
+var Index = function Index(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5
+    },
+    __self: this
+  }, "Header");
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Index);
+
+/***/ }),
+
+/***/ "./src/components/header/style.css":
+/*!*****************************************!*\
+  !*** ./src/components/header/style.css ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./src/components/searchResults/index.js":
+/*!***********************************************!*\
+  !*** ./src/components/searchResults/index.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime-corejs2/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/createClass */ "./node_modules/@babel/runtime-corejs2/helpers/esm/createClass.js");
 /* harmony import */ var _babel_runtime_corejs2_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime-corejs2/helpers/esm/possibleConstructorReturn.js");
@@ -877,13 +958,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var react_easy_state__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-easy-state */ "react-easy-state");
 /* harmony import */ var react_easy_state__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_easy_state__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _src_store_global_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../src/store/global.js */ "./src/store/global.js");
+/* harmony import */ var _store_global___WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../store/global/ */ "./src/store/global/index.js");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./style.css */ "./src/components/searchResults/style.css");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_9__);
 
 
 
 
 
-var _jsxFileName = "C:\\wamp64\\www\\html\\internet-music-database\\pages\\search.js";
+var _jsxFileName = "C:\\wamp64\\www\\html\\internet-music-database\\src\\components\\searchResults\\index.js";
+
 
 
 
@@ -911,7 +995,7 @@ function (_Component) {
     key: "ComponentGetSearchResults",
     value: function ComponentGetSearchResults() {
       if (this.state.formattedSearchQuery) {
-        _src_store_global_js__WEBPACK_IMPORTED_MODULE_8__["default"].GetSearchResults(this.state.formattedSearchQuery);
+        _store_global___WEBPACK_IMPORTED_MODULE_8__["default"].GetSearchResults(this.state.formattedSearchQuery);
       }
     }
   }, {
@@ -938,7 +1022,7 @@ function (_Component) {
         searchQuery: newSearchQuery,
         formattedSearchQuery: newFormattedSearchQuery
       });
-      _src_store_global_js__WEBPACK_IMPORTED_MODULE_8__["default"].GetSearchResults(newFormattedSearchQuery);
+      _store_global___WEBPACK_IMPORTED_MODULE_8__["default"].GetSearchResults(newFormattedSearchQuery);
     }
   }, {
     key: "componentDidMount",
@@ -950,36 +1034,35 @@ function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      var searchResultsArray = _src_store_global_js__WEBPACK_IMPORTED_MODULE_8__["default"].searchResultsArray;
+      var searchResultsArray = _store_global___WEBPACK_IMPORTED_MODULE_8__["default"].searchResultsArray;
       var arrayKey = 0;
       var formattedSearchResultsArray = searchResultsArray.slice(0, 30).map(function (oneArtist) {
-        console.log("One artist: ", oneArtist);
         return react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
           key: arrayKey++,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 61
+            lineNumber: 62
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("img", {
           src: oneArtist["image"][4]["#text"],
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 62
+            lineNumber: 63
           },
           __self: this
         }), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement(next_link__WEBPACK_IMPORTED_MODULE_6___default.a, {
-          href: "/artist?name=".concat(oneArtist["name"].replace(/ /gi, "+").toLowerCase()),
+          href: "/artist?&name=".concat(oneArtist["name"].replace(/ /gi, "+").toLowerCase()),
           as: "/artist/".concat(oneArtist["name"].replace(/ /gi, "+").toLowerCase()),
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 63
+            lineNumber: 64
           },
           __self: this
         }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 71
+            lineNumber: 72
           },
           __self: this
         }, oneArtist["name"])));
@@ -988,25 +1071,25 @@ function (_Component) {
         href: "/",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 78
+          lineNumber: 79
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("a", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 79
+          lineNumber: 80
         },
         __self: this
       }, "Home")), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 81
+          lineNumber: 82
         },
         __self: this
       }, "Search query: ", this.state.searchQuery), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 82
+          lineNumber: 83
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("input", {
@@ -1016,13 +1099,13 @@ function (_Component) {
         },
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 83
+          lineNumber: 84
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 90
+          lineNumber: 91
         },
         __self: this
       }, formattedSearchResultsArray));
@@ -1036,10 +1119,71 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./src/store/global.js":
-/*!*****************************!*\
-  !*** ./src/store/global.js ***!
-  \*****************************/
+/***/ "./src/components/searchResults/style.css":
+/*!************************************************!*\
+  !*** ./src/components/searchResults/style.css ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./src/layouts/search/index.js":
+/*!*************************************!*\
+  !*** ./src/layouts/search/index.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_header___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/header/ */ "./src/components/header/index.js");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.css */ "./src/layouts/search/style.css");
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_css__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "C:\\wamp64\\www\\html\\internet-music-database\\src\\layouts\\search\\index.js";
+
+
+
+
+var Index = function Index(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_header___WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }), "This search page", props.children);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Index);
+
+/***/ }),
+
+/***/ "./src/layouts/search/style.css":
+/*!**************************************!*\
+  !*** ./src/layouts/search/style.css ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+
+/***/ "./src/store/global/index.js":
+/*!***********************************!*\
+  !*** ./src/store/global/index.js ***!
+  \***********************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1057,7 +1201,6 @@ var Index = Object(react_easy_state__WEBPACK_IMPORTED_MODULE_0__["store"])({
       }
     }).then(function (array) {
       if (array) {
-        console.log("full results: ", array);
         Index.searchResultsArray = array["results"]["artistmatches"]["artist"];
       }
     });
