@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Link from "next/link";
 
 class Index extends Component {
   constructor(props) {
@@ -10,7 +11,17 @@ class Index extends Component {
   }
 
   render() {
-    return <div>Test: {this.state.test} This home page</div>;
+    return (
+      <div>
+        <Link href="/testpath">
+          <a>Home</a>
+        </Link>
+        <Link href="/artist">
+          <a>Artist</a>
+        </Link>
+        Test: {this.state.test} This home page
+      </div>
+    );
   }
 }
 

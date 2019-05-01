@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Link from "next/link";
 import { view } from "react-easy-state";
 
 import GlobalStore from "../src/store/global.js";
@@ -14,20 +15,39 @@ class Index extends Component {
   }
 
   ComponentGetSearchResults() {
-    let currentLocation = window.location.href;
-    let searchParameters = new URLSearchParams(currentLocation);
-    let queryArray = searchParameters.getAll("query");
-    let newSearchQuery = queryArray[0];
-    let newFormattedSearchQuery = newSearchQuery.replace(/ /gi, "+");
+    if (this.state.formattedSearchQuery) {
+      GlobalStore.GetSearchResults(this.state.formattedSearchQuery);
+    }
+  }
+
+  UpdateSearchQuery(event) {
+    let newSearchQuery;
+    let newFormattedSearchQuery;
+
+    if (event) {
+      newSearchQuery = event.target.value;
+      newFormattedSearchQuery = event.target.value;
+    } else {
+      let currentLocation = window.location.href;
+      let searchParameters = new URLSearchParams(currentLocation);
+      let queryArray = searchParameters.getAll("query");
+
+      if (queryArray[0]) {
+        newSearchQuery = queryArray[0];
+        newFormattedSearchQuery = newSearchQuery.replace(/ /gi, "+");
+      }
+    }
+
     this.setState({
       searchQuery: newSearchQuery,
       formattedSearchQuery: newFormattedSearchQuery
     });
+
     GlobalStore.GetSearchResults(newFormattedSearchQuery);
   }
 
   componentDidMount() {
-    this.ComponentGetSearchResults();
+    this.UpdateSearchQuery();
   }
 
   render() {
@@ -40,15 +60,33 @@ class Index extends Component {
         return (
           <div key={arrayKey++}>
             <img src={oneArtist["image"][4]["#text"]} />
-            {oneArtist["name"]}
-            {oneArtist["listeners"]}
-            {oneArtist["mbid"]}
+            <Link
+              href={`/artist?name=${oneArtist["name"]
+                .replace(/ /gi, "+")
+                .toLowerCase()}`}
+              as={`/artist/${oneArtist["name"]
+                .replace(/ /gi, "+")
+                .toLowerCase()}`}
+            >
+              <a>{oneArtist["name"]}</a>
+            </Link>
           </div>
         );
       });
     return (
       <>
+        <Link href={`/`}>
+          <a>Home</a>
+        </Link>
         <div>Search query: {this.state.searchQuery}</div>
+        <div>
+          <input
+            value={this.state.searchQuery}
+            onChange={event => {
+              this.UpdateSearchQuery(event);
+            }}
+          />
+        </div>
         <div>{formattedSearchResultsArray}</div>
       </>
     );

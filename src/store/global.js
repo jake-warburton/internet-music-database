@@ -16,7 +16,11 @@ const Index = store({
         }
       })
       .then(array => {
-        Index.searchResultsArray = array["results"]["artistmatches"]["artist"];
+        if (array) {
+          console.log("full results: ", array);
+          Index.searchResultsArray =
+            array["results"]["artistmatches"]["artist"];
+        }
       });
   },
   searchResultsArray: []
